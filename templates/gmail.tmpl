@@ -1,0 +1,15 @@
+<h2><b>{{user}}</b> just deployed to <b>{{environment}}</b>.</h2>
+Last {{commits.length}} commit(s) are:<br>
+<ol>{{#each commits}}
+  <li>
+    <a href="{{{repoUrl}}}/commit/{{sha1}}">{{sha1}}</a>
+    {{{message}}}<br>
+  </li>
+{{/each}}</ol>
+
+{{#if changed}}
+<br/>
+<a href="{{{repoUrl}}}/compare/{{diff.previous}}...{{diff.current}}">
+  Full diff since last deployment
+</a>
+{{/if}}
