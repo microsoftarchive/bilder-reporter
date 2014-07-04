@@ -1,4 +1,4 @@
-@all: {{user}} just deployed to {{environment}}. Last {{commits.length}} commit(s) are:{{#each commits}}
+@here: {{user}} just deployed to {{environment}}. Last {{commits.length}} commit(s) are:{{#each commits}}
 * {{{message}}}({{{repoUrl}}}/commit/{{sha1}}){{/each}}
 
 {{#if changed}}
