@@ -1,0 +1,6 @@
+@all: {{user}} just deployed to {{environment}}. Last {{commits.length}} commit(s) are:{{#each commits}}
+* {{{message}}}({{{repoUrl}}}/commit/{{sha1}}){{/each}}
+
+{{#if changed}}
+Full diff since last deployment ({{{repoUrl}}}/compare/{{diff.previous}}...{{diff.current}})
+{{/if}}

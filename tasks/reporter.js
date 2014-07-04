@@ -15,7 +15,7 @@ module.exports = function (grunt) {
   var formats = {
     'gmail': require('../lib/gmail'),
     'slack': require('../lib/slack'),
-    // 'hipchat': function () {}
+    'hipchat': require('../lib/hipchat')
   };
 
   grunt.registerTask('bilder/reporter', function () {
@@ -48,6 +48,7 @@ module.exports = function (grunt) {
       'previous': previous.commits[0].sha1,
       'current': current.commits[0].sha1
     };
+
     var data = {
       'user': current.user.name,
       'environment': current.environment,
