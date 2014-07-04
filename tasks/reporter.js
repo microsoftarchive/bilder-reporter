@@ -14,7 +14,7 @@ module.exports = function (grunt) {
 
   var formats = {
     'gmail': require('../lib/gmail'),
-    'slack': require('../lib/slack'),
+    // 'slack': require('../lib/slack'),
     'hipchat': require('../lib/hipchat')
   };
 
