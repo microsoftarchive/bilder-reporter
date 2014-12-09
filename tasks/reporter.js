@@ -14,7 +14,7 @@ module.exports = function (grunt) {
 
   var formats = {
     'gmail': require('../lib/gmail'),
-    // 'slack': require('../lib/slack'),
+    'slack': require('../lib/slack'),
     'hipchat': require('../lib/hipchat')
   };
 
@@ -23,7 +23,8 @@ module.exports = function (grunt) {
     var done = this.async();
     var options = this.options({
       'maxCommits': 3,
-      'maxDeployments': 2
+      'maxDeployments': 2,
+      'notify': []
     });
 
     var logFile = path.resolve(options.logFile);
@@ -62,7 +63,9 @@ module.exports = function (grunt) {
     };
 
     // send out notifications
-    var notifications = Object.keys(formats);
+    var notifications = options.notify.filter(function (key) {
+      return key in formats;
+    });
     async.forEach(notifications, function (type, callback) {
       var template = grunt.file.read(path.join(templatesDir, type + '.tmpl'));
       var templateFn = handlebars.compile(template);
