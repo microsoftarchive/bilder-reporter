@@ -1,6 +1,6 @@
 {
   "name": "bilder-reporter",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "report deployments via slack, hipchat & gmail",
   "repository": {
     "type": "git",
