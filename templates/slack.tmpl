@@ -1,4 +1,4 @@
-@channel: *{{user}}* just deployed to *{{environment}}*. Last {{commits.length}} commit(s) are:{{#each commits}}
+*{{user}}* just deployed to *{{environment}}*. Last {{commits.length}} commit(s) are:{{#each commits}}
 * <{{{repoUrl}}}/commit/{{sha1}}|{{sha1}}> {{{message}}}{{/each}}
 
 {{#if changed}}
